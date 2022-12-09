@@ -10,6 +10,7 @@ var card_raw = [
 
 
 var card = []
+var card_check_failed = ""
 for (let index = 0, card_id = 0; index < card_raw.length; index++) {
     card_raw[index] = card_raw[index].replace(" ", "").replace("\t", "")
     if ((card_raw[index].length == 12 || (card_raw[index].length <= 19 && card_raw[index].length >= 16)) && !isNaN(Number(card_raw[index]))) {
@@ -17,8 +18,12 @@ for (let index = 0, card_id = 0; index < card_raw.length; index++) {
         card_id++;
     }
     else {
+        card_check_failed += card_raw[index] + "\n";
         continue;
     }
+}
+if (card_check_failed.length > 0) {
+    console.log("无法使用银行卡查询的账号：\n" + card_check_failed + "请自主检查该账号列表")
 }
 
 

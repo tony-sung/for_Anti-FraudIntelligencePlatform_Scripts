@@ -125,12 +125,12 @@ function sleep(time) {
                 var second_local = second;
                 if (card[index_local] == yaykShow.document.querySelector("#zcGrid" + first + " > tbody > tr:nth-child(" + second_local + ") > td:nth-child(5)").innerHTML) {
                     try {
-                        if (card[index_local].length == 12 || (card[index_local].length <= 19 && card[index_local].length >= 16) && !isNaN(Number(card[index_local]))) {
+                        if ((card[index_local].length == 12 || (card[index_local].length <= 19 && card[index_local].length >= 16)) && !isNaN(Number(card[index_local]))) {
                             console.log("Exporting Account: " + card[index_local] + ".\nExport: The " + index + " account in " + second_local + " line,\nTotal: " + card.length + ".")
                             // 点击明细按钮
                             yaykShow.document.querySelector("#zcGrid" + first + " > tbody > tr:nth-child(" + second_local + ") > td:nth-child(7) > span:nth-child(1)").click();
                             for (let index = 1; true;) {
-                                if (zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(1) > td:nth-child(2)") != null && zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(1) > td:nth-child(6)") != null && zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(1) > td:nth-child(6)").innerHTML.includes(card[index_local]) && zcShowIframe.document.querySelector("#toolbar > i") != null || index >= waitExecFrequency) {
+                                if (zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(1) > td:nth-child(2)") != null && zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(1) > td:nth-child(6)") != null && zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(1) > td:nth-child(6)").innerHTML == card[index_local] && zcShowIframe.document.querySelector("#toolbar > i") != null || index >= waitExecFrequency) {
                                     break;
                                 }
                                 if (isLimitLoops) {
@@ -154,11 +154,11 @@ function sleep(time) {
                             // 点击明细按钮
                             yaykShow.document.querySelector("#zcGrid" + first + " > tbody > tr:nth-child(" + second_local + ") > td:nth-child(7) > span:nth-child(1)").click();
                             for (let index = 1; true;) {
-                                if (zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(1) > td:nth-child(2)") != null && zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(2) > td:nth-child(2)") != null && zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(2) > td:nth-child(2)").innerHTML.includes(card[index_local]) && zcShowIframe.document.querySelector("#toolbar > i") != null || index >= waitExecFrequency) {
+                                if (zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(1) > td:nth-child(2)") != null && zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(2) > td:nth-child(2)") != null && zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(2) > td:nth-child(2)").innerHTML == card[index_local] && zcShowIframe.document.querySelector("#toolbar > i") != null || index >= waitExecFrequency) {
                                     break;
                                 }
                                 if (isLimitLoops) {
-                                    index++
+                                    index++;
                                 }
                                 await sleep(sleeptime)
                             }
@@ -207,7 +207,7 @@ function sleep(time) {
                             // 点击主体按钮
                             yaykShow.document.querySelector("#zcGrid" + first + " > tbody > tr:nth-child(" + second_local + ") > td:nth-child(7) > span:nth-child(2)").click();
                             while (true) {
-                                if (zcShowIframe.document.querySelector("body > div > div > table > tbody > tr:nth-child(1) > td:nth-child(2)") != null && zcShowIframe.document.querySelector("body > div > div > table > tbody > tr:nth-child(1) > td:nth-child(4)") != null && zcShowIframe.document.querySelector("body > div > div > table > tbody > tr:nth-child(1) > td:nth-child(4)").innerHTML.includes(card[index_local]) && zcShowIframe.document.querySelector("body > div > div > table > tbody > tr:nth-child(1) > td:nth-child(6)") != null && zcShowIframe.document.querySelector("body > div > div > table > tbody > tr:nth-child(5) > td:nth-child(4)") != null && zcShowIframe.document.querySelector("body > div > div > table > tbody > tr:nth-child(5) > td:nth-child(6)") != null && zcShowIframe.document.querySelector("body > div > div > table > tbody > tr:nth-child(6) > td:nth-child(2)") != null && zcShowIframe.document.querySelector("body > div > div > table > tbody > tr:nth-child(9) > td:nth-child(6)") != null && zcShowIframe.document.querySelector("body > div > div > table > tbody > tr:nth-child(13) > td:nth-child(2)") != null) {
+                                if (zcShowIframe.document.querySelector("body > div > div > table > tbody > tr:nth-child(1) > td:nth-child(2)") != null && zcShowIframe.document.querySelector("body > div > div > table > tbody > tr:nth-child(1) > td:nth-child(4)") != null && zcShowIframe.document.querySelector("body > div > div > table > tbody > tr:nth-child(1) > td:nth-child(4)").innerHTML == card[index_local] && zcShowIframe.document.querySelector("body > div > div > table > tbody > tr:nth-child(1) > td:nth-child(6)") != null && zcShowIframe.document.querySelector("body > div > div > table > tbody > tr:nth-child(5) > td:nth-child(4)") != null && zcShowIframe.document.querySelector("body > div > div > table > tbody > tr:nth-child(5) > td:nth-child(6)") != null && zcShowIframe.document.querySelector("body > div > div > table > tbody > tr:nth-child(6) > td:nth-child(2)") != null && zcShowIframe.document.querySelector("body > div > div > table > tbody > tr:nth-child(9) > td:nth-child(6)") != null && zcShowIframe.document.querySelector("body > div > div > table > tbody > tr:nth-child(13) > td:nth-child(2)") != null) {
                                     break;
                                 }
                                 await sleep(sleeptime)
@@ -232,7 +232,7 @@ function sleep(time) {
                                 try {
                                     yaykShow.document.querySelector("#zcGrid" + first + " > tbody > tr:nth-child(" + second_local + ") > td:nth-child(7) > span:nth-child(1)").click();
                                     for (let index = 1; true;) {
-                                        if (zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(1) > td:nth-child(6)") != null && zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(1) > td:nth-child(6)").innerHTML.includes(card[index_local]) && zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(9) > td:nth-child(4)") != null || index >= waitExecFrequency) {
+                                        if (zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(1) > td:nth-child(6)") != null && zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(1) > td:nth-child(6)").innerHTML == card[index_local] && zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(9) > td:nth-child(4)") != null || index >= waitExecFrequency) {
                                             break;
                                         }
                                         if (isLimitLoops) {
@@ -260,7 +260,7 @@ function sleep(time) {
                             // 点击主体按钮
                             yaykShow.document.querySelector("#zcGrid" + first + " > tbody > tr:nth-child(" + second_local + ") > td:nth-child(7) > span:nth-child(2)").click();
                             while (true) {
-                                if (zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(1) > td:nth-child(4)") != null && zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(1) > td:nth-child(4)").innerHTML.includes(card[index_local]) && zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(1) > td:nth-child(6)") != null && zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(2) > td:nth-child(4)") != null && zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(2) > td:nth-child(6)") != null && zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(6) > td:nth-child(2)") != null) {
+                                if (zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(1) > td:nth-child(4)") != null && zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(1) > td:nth-child(4)").innerHTML == card[index_local] && zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(1) > td:nth-child(6)") != null && zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(2) > td:nth-child(4)") != null && zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(2) > td:nth-child(6)") != null && zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(6) > td:nth-child(2)") != null) {
                                     break;
                                 }
                                 await sleep(sleeptime);
@@ -286,7 +286,7 @@ function sleep(time) {
                                 try {
                                     yaykShow.document.querySelector("#zcGrid" + first + " > tbody > tr:nth-child(" + second_local + ") > td:nth-child(7) > span:nth-child(1)").click();
                                     for (let index = 1; true;) {
-                                        if (zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(2) > td:nth-child(2)") != null && zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(2) > td:nth-child(2)").innerHTML.includes(card[index_local]) && zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(8) > td:nth-child(6)") != null && zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(7) > td:nth-child(2)") != null || index >= waitExecFrequency) {
+                                        if (zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(2) > td:nth-child(2)") != null && zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(2) > td:nth-child(2)").innerHTML == card[index_local] && zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(8) > td:nth-child(6)") != null && zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(7) > td:nth-child(2)") != null || index >= waitExecFrequency) {
                                             break;
                                         }
                                         if (isLimitLoops) {

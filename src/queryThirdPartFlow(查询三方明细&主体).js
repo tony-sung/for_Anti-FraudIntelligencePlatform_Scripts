@@ -12,15 +12,20 @@ var card_raw = [
 // 设置每个账号查几行，最多4行：
 var querylinenum = prompt("请输入每个账号查询几行（1行相当于3个月明细，以此类推）：", 4)
 var card = []
+var card_check_failed = ""
 for (let index = 0, card_id = 0; index < card_raw.length; index++) {
     card_raw[index] = card_raw[index].replace(" ", "").replace("\t", "");
     if ((!isNaN(Number((card_raw[index].replace("-", "")))) && card_raw[index].length >= 12) || (!isNaN(Number(card_raw[index].replace(/x/gi, ""))) && card_raw[index].length == 18)) {
+        card_check_failed += card_raw[index] + "\n";
         continue;
     }
     else {
         card[card_id] = card_raw[index];
         card_id++;
     }
+}
+if (card_check_failed.length > 0) {
+    console.log("无法使用第三方查询的账号：\n" + card_check_failed + "请自主检查该账号列表")
 }
 // 设置此系列银行卡是第几次查询，如果是第1次查询且查询行数是4行，则相当于查近一年明细；如果查询次数是第2次，查询账号行数是2行，则相当于半年之前的半年明细。
 var checknum = prompt("请输入向过去查询第几个" + 3 * querylinenum + "个月明细：")

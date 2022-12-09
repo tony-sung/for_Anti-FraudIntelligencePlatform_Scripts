@@ -109,15 +109,15 @@ function sleep(time) {
                         yaykShow.document.querySelector("#zcGrid" + first + " > tbody > tr:nth-child(" + second_local + ") > td:nth-child(7) > span:nth-child(3)").click();
                         while (true) {
                             if (zcShowIframe.document.querySelector("#sfQzhShow") != null) {
-                                if (zcShowIframe.document.querySelector("#sfQzhShow").contentWindow.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(1) > td:nth-child(8)") != null && zcShowIframe.document.querySelector("#sfQzhShow").contentWindow.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(1) > td:nth-child(8)").innerHTML.includes(card[index_local])) {
+                                if (zcShowIframe.document.querySelector("#sfQzhShow").contentWindow.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(1) > td:nth-child(8)") != null && zcShowIframe.document.querySelector("#sfQzhShow").contentWindow.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(1) > td:nth-child(8)").innerHTML == card[index_local]) {
                                     break;
                                 }
                                 await sleep(sleeptime)
                             }
                             await sleep(sleeptime);
                         }
-                        for (let third = 1; third <= 2; third++) {
-                            // 点击全账号1和2
+                        for (let third = 1; third <= zcShowIframe.$("body > div > ul > li").length; third++) {
+                            // 点击全账号All
                             zcShowIframe.document.querySelector("body > div > ul > li:nth-child(" + third + ") > a").click();
                             // 点击后等待
                             while (true) {
@@ -179,7 +179,7 @@ function sleep(time) {
                         yaykShow.document.querySelector("#zcGrid" + first + " > tbody > tr:nth-child(" + second_local + ") > td:nth-child(7) > span:nth-child(2)").click();
                         while (true) {
                             if (zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(1) > td:nth-child(4)") != null) {
-                                if (zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(1) > td:nth-child(4)").innerHTML.includes(card[index_local])) {
+                                if (zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(1) > td:nth-child(4)").innerHTML == card[index_local]) {
                                     break;
                                 }
                                 await sleep(sleeptime)

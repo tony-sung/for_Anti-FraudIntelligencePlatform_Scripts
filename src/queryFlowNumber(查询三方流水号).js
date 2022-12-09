@@ -33,7 +33,7 @@ for (let second = 0; second < listlen; second++) {
     addsfLs.document.querySelector("#sfLsQqEditForm > div:nth-child(14) > div:nth-child(" + (second + 1) + ") > div:nth-child(4) > div").className = "form_controls success"
     
     // 支付机构
-    if (card[second].indexOf("420000") != -1) {
+    if (card[second].includes("42000")) {
         addsfLs.document.querySelector("#bean_payname_" + second).value = "财付通支付科技有限公司";
         addsfLs.document.querySelector("#bean_paycode_" + second).value = "Z00444000013";
         addsfLs.document.querySelector("#sfLsQqEditForm > div:nth-child(14) > div:nth-child(" + (second + 1) + ") > div:nth-child(5) > div").className = "has-feedback form_controls success"
