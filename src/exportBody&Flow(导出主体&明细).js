@@ -265,7 +265,7 @@ function sleep(time) {
                                 }
                                 await sleep(sleeptime);
                             }
-                            if (zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(6) > td:nth-child(2)").innerHTML.includes("已反馈") || zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(6) > td:nth-child(2)").innerHTML.includes("失败反馈")) {
+                            if (zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(7) > td:nth-child(2)").innerHTML.includes("已反馈") || zcShowIframe.document.querySelector("body > div.banner_box > div > table > tbody > tr:nth-child(7) > td:nth-child(2)").innerHTML.includes("失败反馈")) {
                                 if ((card[index_local].includes("tenpay") || card[index_local].includes("wxid_")) || (!card[index_local].includes("@") && isNaN(Number(card[index_local])))) {
                                     card_type = "财付通";
                                 }
